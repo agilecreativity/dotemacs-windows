@@ -1,0 +1,23 @@
+# Emacs file
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# The elpa directory
+/elpa/
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# misc files
+.places
+history
+recentf
+ido.last
+smex-items
+
+# Vim's backup files
+*.*~
+server/

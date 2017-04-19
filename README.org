@@ -1,0 +1,40 @@
+** README.md
+   Basic setup for simple Emacs workflow.
+*** Minimal packages
+- [[https://github.com/jwiegley/use-package][use-package]] for simple managing Emacs package system
+- [[https://www.emacswiki.org/emacs/ParEdit][paredit]] for dealing with elisp config (e.g. init.el) - optional
+  - Make sure that it is turned on for =lisp= file
+- [[https://github.com/bbatsov/zenburn-emacs][zenburn-theme]] for better viewing (optional)
+  - setup the font to make it look pretty
+- [[https://www.emacswiki.org/emacs/Magit][magit]] for working effectively with git
+**** Optional
+- [[http://orgmode.org/][org-mode]] for taking notes
+- [[https://github.com/sabof/org-bullets][org-bullets]] for beautiful outlines in org-mode
+*** Basic Installation
+
+- [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro fonts]] available from Github
+- [[https://github.com/tonsky/FiraCode][FiraCode]] very geeky looking fonts
+  To install in Windows just clone/download and click on each font file and install
+- Remap your =Caps Lock= to control - it will be good for you
+  - I am using [[https://www.howtogeek.com/194705/how-to-disable-or-reassign-the-caps-lock-key-on-any-operating-system/][this tips]] from howtogeek.com for Windows
+- Move the backup files out of the way
+- Git version must be installed correctly! (there are so many choices)
+
+** Problem running Emacs on Windows
+
+See [[http://stackoverflow.com/questions/885793/emacs-error-when-calling-server-start][server start not safe]] error in Windows
+
+One suggestion
+
+#+BEGIN_SRC emacs-lisp
+;; Note:
+;; (getenv "APPDATA")      ;; => "C:\\Users\\sbadev\\AppData\\Roaming"
+;; (eq window-system 'w32) ;; => t
+;; server-auth-dir ;; => "~\\.emacs.d\\server\\"
+(require 'server)
+(when (and (eq window-system 'w32) (file-exists-p (getenv "APPDATA")))
+  ;; Current value of server-auth-dir is "~\\.emacs.d\\server\\"
+  (setq server-auth-dir (concat (getenv "APPDATA") "/.emacs.d/server"))
+  (make-directory server-auth-dir)  )
+(server-start)
+#+END_SRC
