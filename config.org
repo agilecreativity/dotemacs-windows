@@ -4,13 +4,6 @@
 ** My not so minimal Emacs setup for working under Windows system.
 
 #+BEGIN_SRC emacs-lisp
-  ;; (require 'package)
-  ;; (setq package-archives '(("org" . "http://orgmode.org/elpa/")
-  ;;                          ("gnu" . "http://elpa.gnu.org/packages/")
-  ;;                        ;;("melpa" . "http://melpa.org/packages/")
-  ;;                          ("melpa-stable" . "http://stable.melpa.org/packages/")))
-  ;; (package-initialize)
-
   (require 'cl)
 
   (when (not package-archive-contents)
@@ -388,13 +381,13 @@
   (use-package helm-ag
     :ensure t)
 
-  ;; Tips: http://stackoverflow.com/questions/885793/emacs-error-when-calling-server-start
-  (let* ((app-data-dir (getenv "APPDATA"))
-         (server-auth-dir-path (concat app-data-dir "/.emacs.d/server")))
-   (when (and (eq window-system 'w32) (file-exists-p app-data-dir))
-     ;; Suppress error "directory ~/.emacs.d/server is unsafe" on Windows
-     (defun server-ensure-safe-dir (dir) "Noop" t))
-    (server-start))
+  ;;;; Tips: http://stackoverflow.com/questions/885793/emacs-error-when-calling-server-start
+  ;;(let* ((app-data-dir (getenv "APPDATA"))
+  ;;       (server-auth-dir-path (concat app-data-dir "/.emacs.d/server")))
+  ;; (when (and (eq window-system 'w32) (file-exists-p app-data-dir))
+  ;;   ;; Suppress error "directory ~/.emacs.d/server is unsafe" on Windows
+  ;;   (defun server-ensure-safe-dir (dir) "Noop" t))
+  ;;  (server-start))
 
 
   ;; Better default

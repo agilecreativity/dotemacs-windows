@@ -17,8 +17,8 @@
 
 (setq package-archives '(("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ;;("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 (package-initialize)
 
 ;;; Bootstrap use-package
@@ -32,7 +32,8 @@
   (require 'use-package))
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)
-;(setq use-package-verbose t)
+(require 's)
+(setq use-package-verbose t)
 
 ;;; Load the config
 (org-babel-load-file (concat user-emacs-directory "config.org"))

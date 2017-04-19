@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (salt-mode ztree zenburn-theme wgrep-ag use-package terraform-mode smex smartparens perspective paredit org-bullets mmm-jinja2 magit helm-ag guide-key groovy-mode graphql-mode f company color-theme-sanityinc-tomorrow clomacs change-inner auto-complete ag adoc-mode ack ace-window))))
+    (zenburn-theme wgrep-ag use-package terraform-mode smex smartparens salt-mode perspective paredit org-bullets magit helm-ag guide-key graphql-mode f company color-theme-sanityinc-tomorrow change-inner ag adoc-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
